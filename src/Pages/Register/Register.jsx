@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../../Components/Container/Container';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import useAuth from '../../hooks/useAuth';
 import { updateProfile } from 'firebase/auth';
@@ -11,6 +11,7 @@ import toast from 'react-hot-toast';
 const Register = () => {
    const axiosPublic = useAxiosPublic();
    const { createUser } = useAuth();
+   const navigate = useNavigate();
 
    const image_hosting_key = import.meta.env.VITE_IMAGE_BB_API_KEY;
     const imageBB_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -48,12 +49,13 @@ const Register = () => {
                     displayName: name, photoURL : hostedImg
                 })
                 toast.success('Successfully Created Account.')
+                navigate('/')
             }
         }
 
     // Clear the form after successful submission
     e.target.reset();
-    
+
     } catch (error) {
         console.error('Error:', error);
         toast.error(error.message);

@@ -1,12 +1,15 @@
 import React from "react";
 import Container from "../../Components/Container/Container";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const {userLogIn} = useAuth();
+    const {userLogIn, googleLogin} = useAuth();
+    const navigate = useNavigate();
 
+    //? User login  with password
    const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,6 +28,7 @@ const Login = () => {
     if(user) {
         toast.success('Successfully Logged in.')
         console.log(user);
+        navigate('/')
     }
     } catch (error) {
         console.log('Login Error', error);
@@ -33,6 +37,17 @@ const Login = () => {
     
     // Clear the form after successful submission
       e.target.reset();
+   }
+
+   //? Social login
+   const handleGoogleLogin = async () => {
+    const user = await googleLogin();
+    console.log(user);
+     if(user) {
+        toast.success('Successfully logged in.')
+        console.log(user);
+        navigate('/')
+     }
    }
 
   return (
@@ -76,10 +91,15 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn bg-[#d27a10] text-gray-800">Login</button>
               </div>
             </form>
-            <p className="text-neutral-100 font-thin text-center">New to ClickDwells? Please <Link to={'/register'}><span className="text-blue-400 hover:underline"> #sign up</span></Link></p>
+            <div className="flex flex-col items-center justify-center py-2 gap-3">
+            <p>Or login with Google 
+            </p>
+            <button onClick={handleGoogleLogin} className="btn text-xl"><FcGoogle/></button>
+            </div>
+            <p className="text-neutral-200 pb-4 font-thin text-center text-sm">New to ClickDwells? Please <Link to={'/register'}><span className="text-blue-400 hover:underline"> #sign up</span></Link></p>
           </div>
         </div>
       </div>
