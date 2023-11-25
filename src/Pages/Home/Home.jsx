@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Banner from "./Banner";
 import Container from "../../Components/Container/Container";
+import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
-
   const bg = {
     backgroundImage: `linear-gradient(to right, #00000063, #00000063), url('https://i.ibb.co/6tLg5HD/etienne-beauregard-riverin-B0a-Cv-AVSX8-E-unsplash.jpg')`,
     backgroundSize: "cover",
@@ -19,9 +19,10 @@ const Home = () => {
       >
         <Container>
           <Navbar />
-          <Banner/>
+          <Banner />
         </Container>
       </div>
+      <Footer />
     </div>
   );
 };
