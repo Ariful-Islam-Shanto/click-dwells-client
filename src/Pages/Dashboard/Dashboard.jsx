@@ -3,17 +3,25 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen flex">
+    <div className=" min-h-screen flex">
       <div className="w-64 menu">
-        <ul className="menu p-4">
-          <li>
+        <ul className="menu text-center  p-4">
+          <li className="text-center">
             <NavLink
-              to="userHome"
+              to="my-profile"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? " " : ""
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
               }
             >
-              User Home
+              My Profile
+            </NavLink>
+            <NavLink
+              to="wishlist"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
+              }
+            >
+              My Profile
             </NavLink>
           </li>
         </ul>

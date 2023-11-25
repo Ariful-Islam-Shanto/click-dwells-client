@@ -5,6 +5,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import Dashboard from '../Pages/Dashboard/Dashboard';
+import MyProfile from '../Pages/Dashboard/User/MyProfile';
 
 const routes = createBrowserRouter([
     {
@@ -29,7 +30,11 @@ const routes = createBrowserRouter([
         path : 'dashboard',
         element : <Dashboard></Dashboard>,
         children : [
-            
+            //? User only routes
+            {
+                path : 'my-profile',
+                element : <MyProfile/>
+            }
         ]
     }
 ])
