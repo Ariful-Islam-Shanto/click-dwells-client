@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
 import logo from '../../../public/Animation - 1700875593059.json';
 
@@ -27,7 +27,7 @@ const Navbar = () => {
     </>
   return (
     <div>
-      <div className="navbar bg-transparent">
+      <div className="navbar bg-transparent p-8">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -56,7 +56,7 @@ const Navbar = () => {
           <div className="w-16 h-16 flex items-center justify-center">
           <Lottie animationData={logo} ></Lottie>
           </div>
-          <a className="text-xl font-bold text-white">ClickDwells</a>
+          <a className="text-xl font-bold tex-white">ClickDwells</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex gap-12">
@@ -64,7 +64,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+          <Link to={'/login'}>
           <Button text='Login'/>
+          </Link>
         </div>
       </div>
     </div>
