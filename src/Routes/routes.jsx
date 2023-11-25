@@ -6,6 +6,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import Dashboard from '../Pages/Dashboard/Dashboard';
 import MyProfile from '../Pages/Dashboard/User/MyProfile';
+import AddProperty from '../Pages/Dashboard/Agent/AddProperty';
 
 const routes = createBrowserRouter([
     {
@@ -34,6 +35,11 @@ const routes = createBrowserRouter([
             {
                 path : 'my-profile',
                 element : <MyProfile/>
+            },
+            //? Agent only routes
+            {
+                path : 'add-property',
+                element : <AddProperty/>
             }
         ]
     }

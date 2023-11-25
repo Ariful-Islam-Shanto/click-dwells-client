@@ -27,7 +27,7 @@ const MyProfile = () => {
 
         <div style={bg} className="bg-black my-auto rounded-lg drop-shadow-md h-full w-full mx-auto flex flex-col items-start justify-center p-10">
         <div className="w-20 h-20 rounded-full">
-          <img src={user?.photoURL} alt="h-full w-full rounded-full" />
+          <img src={user?.photoURL} alt="" className="h-full w-full rounded-full object-cover" />
         </div>
         <div>
         <h1 className="text-sm text-white py-2 font-bold">

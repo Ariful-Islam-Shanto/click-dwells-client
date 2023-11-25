@@ -15,6 +15,8 @@ const Dashboard = () => {
             >
               My Profile
             </NavLink>
+            </li>
+            <li>
             <NavLink
               to="wishlist"
               className={({ isActive, isPending }) =>
@@ -23,7 +25,18 @@ const Dashboard = () => {
             >
               My Profile
             </NavLink>
-          </li>
+            </li>
+            {/* Agent menu */}
+            <li>
+            <NavLink
+              to="add-property"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
+              }
+            >
+              Add Property
+            </NavLink>
+            </li>
         </ul>
       </div>
       <div className="flex-1">
