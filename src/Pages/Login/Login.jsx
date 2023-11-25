@@ -1,17 +1,38 @@
 import React from "react";
 import Container from "../../Components/Container/Container";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-   const url = "https://i.ibb.co/LJdDfGJ/f12ce251f6443cefcce128b1b90f72aa.png"
+    const {userLogIn} = useAuth();
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);
     const email = form.get('email');
     const password = form.get('password');
     console.log(email, password);
+
+    if(!email || !password) {
+        return toast.error('Please provide a valid credential');
+    }
+    try {
+        
+    const user = await userLogIn(email, password)
+
+    if(user) {
+        toast.success('Successfully Logged in.')
+        console.log(user);
+    }
+    } catch (error) {
+        console.log('Login Error', error);
+        toast.error(error.message)
+    }
+    
+    // Clear the form after successful submission
+      e.target.reset();
    }
 
   return (
@@ -58,7 +79,7 @@ const Login = () => {
                 <button type="submit" className="btn btn-primary">Login</button>
               </div>
             </form>
-            <p className="text-neutral-100 font-thin text-center">New to ClickDwells? Please <Link><span className="text-blue-400 hover:underline"> #sign up</span></Link></p>
+            <p className="text-neutral-100 font-thin text-center">New to ClickDwells? Please <Link to={'/register'}><span className="text-blue-400 hover:underline"> #sign up</span></Link></p>
           </div>
         </div>
       </div>
