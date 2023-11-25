@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
+import Lottie from "lottie-react";
+import logo from '../../../public/Animation - 1700875593059.json';
 
 const Navbar = () => {
 
@@ -51,7 +53,10 @@ const Navbar = () => {
             {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">ClickDwells</a>
+          <div className="w-16 h-16 flex items-center justify-center">
+          <Lottie animationData={logo} ></Lottie>
+          </div>
+          <a className="text-xl font-bold text-white">ClickDwells</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex gap-12">
