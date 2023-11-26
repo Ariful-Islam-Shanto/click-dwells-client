@@ -14,6 +14,7 @@ import useAxiosSecure from '../hooks/useAxiosSecure';
 import Details from '../Pages/Details/Details';
 import MyWishlist from '../Pages/Dashboard/User/MyWishlist/MyWishlist';
 import MakeAnOfferForm from '../Pages/Dashboard/User/MyWishlist/MakeAnOfferForm';
+import OfferedProperty from '../Pages/Dashboard/Agent/OfferedProperty';
 
 const axiosSecure = useAxiosSecure();
 
@@ -75,6 +76,10 @@ const routes = createBrowserRouter([
             {
                 path : 'my-added-properties',
                 element : <MyAddedProperties/>
+            },
+            {
+                path : 'offered-properties',
+                element : <OfferedProperty/>
             }
         ]
     }
