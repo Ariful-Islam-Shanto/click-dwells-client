@@ -4,10 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Login = () => {
     const {userLogIn, googleLogin} = useAuth();
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     //? User login  with password
    const handleSubmit = async (e) => {
@@ -42,11 +44,22 @@ const Login = () => {
    //? Social login
    const handleGoogleLogin = async () => {
     const user = await googleLogin();
-    console.log(user);
+    // console.log(user);
      if(user) {
-        toast.success('Successfully logged in.')
-        console.log(user);
-        navigate('/')
+          console.log('User', user);
+           //? Save user to database.
+           const userInfo = {
+            name : user.user.displayName,
+            email : user.user.email,
+            role : 'guest',
+          }
+          const { data } = await axiosPublic.put(`/users/${user?.email}`, userInfo);
+          console.log(data);
+          if(data.modifiedCount > 0 || data.upsertedCount > 0 ) {
+            console.log(data);
+          }
+          toast.success('Successfully logged in.')           
+          navigate('/')
      }
    }
 

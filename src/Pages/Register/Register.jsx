@@ -48,6 +48,18 @@ const Register = () => {
                 await updateProfile(auth.currentUser, {
                     displayName: name, photoURL : hostedImg
                 })
+
+                //? Save user to database.
+                const user = {
+                  name : name,
+                  email : email,
+                  role : 'guest',
+                }
+                const { data } = await axiosPublic.put(`/users/${email}`, user);
+                console.log(data);
+                if(data.modifiedCount > 0) {
+                 console.log(data);
+                }
                 toast.success('Successfully Created Account.')
                 navigate('/')
             }
