@@ -3,12 +3,61 @@ import { useLoaderData } from 'react-router-dom';
 import Container from '../../Components/Container/Container';
 import Navbar from '../../Components/Navbar/Navbar';
 import { MdOutlineLocationOn } from "react-icons/md";
+import useAuth from '../../hooks/useAuth';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import toast from 'react-hot-toast';
 
 const Details = () => {
 
     const {data = {}} = useLoaderData();
+    const {user} = useAuth();
+    const axiosSecure = useAxiosSecure();
 
+
+    const handleAddToWishList = async () => {
+        const property = {
+            user : {
+                name : user?.displayName,
+                email : user?.email,
+                image : user?.photoURL
+            },
+            title : data?.title,
+            image : data?.image,
+            location : data?.location,
+            description : data?.description,
+            price_range : data?.price_range,
+            status : 'pending',
+            agent : {
+                name : data?.agent?.name,
+                email : data?.agent?.email,
+                image : data?.agent?.image
+            }
+
+        }
+
+        console.log(property);
+
+       try {
+        const { data } = await axiosSecure.post('/wishlist', property);
+
+        console.log(data);
+        if(data.insertedId) {
+            toast.success('Added to wishlist');
+        }
+       } catch (error) {
+        console.log(error);
+        toast.error(error.message);
+       }
+
+    }
+
+    const {mutate} = useMutation({
+        mutationFn : handleAddToWishList,
+        mutationKey : ['wishlist'],
+    })
     
+   
     return (
         <div className='min-h-screen'>
             <Container>
@@ -31,7 +80,7 @@ const Details = () => {
                         </div>
                         <hr />
                         <div className='w-full'>
-                            <button className='px-8 py-2 text-medium text-gray-100 border-none rounded-md w-full bg-[#0271f8]'>Add to WishList</button>
+                            <button onClick={mutate} className='px-8 py-2 text-medium text-gray-100 border-none rounded-md w-full bg-[#0271f8]'>Add to WishList</button>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ const UserMenu = () => {
         <>
          <li className="text-center">
             <NavLink
-              to="my-profile"
+              to="user-profile"
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
               }

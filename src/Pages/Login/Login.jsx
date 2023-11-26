@@ -51,6 +51,7 @@ const Login = () => {
            const userInfo = {
             name : user.user.displayName,
             email : user.user.email,
+            image : user.user.photoURL,
             role : 'guest',
           }
           const { data } = await axiosPublic.put(`/users/${user?.email}`, userInfo);

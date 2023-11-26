@@ -53,6 +53,7 @@ const Register = () => {
                 const user = {
                   name : name,
                   email : email,
+                  image : hostedImg,
                   role : 'guest',
                 }
                 const { data } = await axiosPublic.put(`/users/${email}`, user);

@@ -53,6 +53,7 @@ const AddProperty = () => {
             agent : {
                 name : agentName,
                 email : agentEmail,
+                image : user?.photoURL
             },
             price_range : priceRange
            }
