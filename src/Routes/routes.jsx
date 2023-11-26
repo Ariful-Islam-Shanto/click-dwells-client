@@ -8,6 +8,7 @@ import Dashboard from '../Pages/Dashboard/Dashboard';
 import AddProperty from '../Pages/Dashboard/Agent/AddProperty';
 import AgentProfile from '../Pages/Dashboard/Agent/AgentProfile';
 import UserProfile from '../Pages/Dashboard/User/UserProfile';
+import MyAddedProperties from '../Pages/Dashboard/Agent/MyAddedProperties';
 
 const routes = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const routes = createBrowserRouter([
             {
                 path : 'add-property',
                 element : <AddProperty/>
+            },
+            {
+                path : 'my-added-properties',
+                element : <MyAddedProperties/>
             }
         ]
     }
