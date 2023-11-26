@@ -5,8 +5,9 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import Dashboard from '../Pages/Dashboard/Dashboard';
-import MyProfile from '../Pages/Dashboard/User/MyProfile';
 import AddProperty from '../Pages/Dashboard/Agent/AddProperty';
+import AgentProfile from '../Pages/Dashboard/Agent/AgentProfile';
+import UserProfile from '../Pages/Dashboard/User/UserProfile';
 
 const routes = createBrowserRouter([
     {
@@ -33,10 +34,14 @@ const routes = createBrowserRouter([
         children : [
             //? User only routes
             {
-                path : 'my-profile',
-                element : <MyProfile/>
+                path : 'user-profile',
+                element : <UserProfile/>
             },
             //? Agent only routes
+            {
+                path : 'agent-profile',
+                element : <AgentProfile/>
+            },
             {
                 path : 'add-property',
                 element : <AddProperty/>

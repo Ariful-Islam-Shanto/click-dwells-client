@@ -1,7 +1,7 @@
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
 
-const MyProfile = () => {
+const UserProfile = () => {
   const { user } = useAuth();
 
   const bg = {
@@ -54,4 +54,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default UserProfile;
