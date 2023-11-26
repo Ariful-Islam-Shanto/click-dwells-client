@@ -10,6 +10,10 @@ import AgentProfile from '../Pages/Dashboard/Agent/AgentProfile';
 import UserProfile from '../Pages/Dashboard/User/UserProfile';
 import MyAddedProperties from '../Pages/Dashboard/Agent/MyAddedProperties';
 import AllProperties from '../Pages/All Properties/AllProperties';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+import Details from '../Pages/Details/Details';
+
+const axiosSecure = useAxiosSecure();
 
 const routes = createBrowserRouter([
     {
@@ -32,6 +36,11 @@ const routes = createBrowserRouter([
                 path : "/allProperties",
                 element : <AllProperties/>
             },
+            {
+                path : "/property/details/:id",
+                element : <Details/>,
+                loader : async ({params}) => await axiosSecure.get(`/property/${params.id}`)
+            }
         ]
     },
     {

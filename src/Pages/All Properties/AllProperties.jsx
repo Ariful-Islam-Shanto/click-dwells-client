@@ -2,6 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Container from '../../Components/Container/Container';
+import Navbar from '../../Components/Navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 const AllProperties = () => {
     const axiosSecure = useAxiosSecure();
@@ -16,9 +18,10 @@ const AllProperties = () => {
 
     console.log(allProperties);
     return (
-        <div className='py-8'>
+        <div className=''>
 
             <Container>
+            <Navbar></Navbar>
             <h1 className='text-4xl mb-8 text-white font-bold'>Find your next place to live</h1>
                 
             <div className='grid grid-cols-1 md:grid-cols-3'>
@@ -44,7 +47,9 @@ const AllProperties = () => {
                                 <img src={property?.agent?.image} alt="Agent" className='w-10 h-10 rounded-full'/>
                                 <h1 className='text-sm text-white font-semibold'></h1>
                             </div>
+                            <Link to={`/property/details/${property?._id}`}>
                             <button className="btn btn-primary">Details</button>
+                            </Link>
                           </div>
                         </div>
                       </div>   
