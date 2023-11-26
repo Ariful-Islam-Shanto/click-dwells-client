@@ -23,6 +23,7 @@ const Details = () => {
                 image : user?.photoURL
             },
             title : data?.title,
+            propertyId : data?._id,
             image : data?.image,
             location : data?.location,
             description : data?.description,

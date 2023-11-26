@@ -12,6 +12,7 @@ import MyAddedProperties from '../Pages/Dashboard/Agent/MyAddedProperties';
 import AllProperties from '../Pages/All Properties/AllProperties';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import Details from '../Pages/Details/Details';
+import MyWishlist from '../Pages/Dashboard/User/MyWishlist';
 
 const axiosSecure = useAxiosSecure();
 
@@ -51,6 +52,10 @@ const routes = createBrowserRouter([
             {
                 path : 'user-profile',
                 element : <UserProfile/>
+            },
+            {
+                path : 'wishlist',
+                element : <MyWishlist/>
             },
             //? Agent only routes
             {
