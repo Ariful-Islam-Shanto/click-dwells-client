@@ -49,7 +49,7 @@ const AddProperty = () => {
             image :  hostedImg,
             description : description,
             location : location,
-            status : 'verified',
+            status : 'pending',
             agent : {
                 name : agentName,
                 email : agentEmail,

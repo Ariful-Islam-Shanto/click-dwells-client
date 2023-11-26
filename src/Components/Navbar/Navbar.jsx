@@ -16,13 +16,21 @@ const Navbar = () => {
   const navLinks = (
     <>
       <NavLink
-        to="/"
+       to="/"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-[#FFAC12]" : ""
         }
-      >
+      > 
         Home
       </NavLink>
+{ user &&      <NavLink
+       to="/allProperties"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-[#FFAC12]" : ""
+        }
+      > 
+        All Properties
+      </NavLink>}
       {user && role && (
         <>
           {role === "guest" ? (

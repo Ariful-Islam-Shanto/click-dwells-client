@@ -9,6 +9,7 @@ import AddProperty from '../Pages/Dashboard/Agent/AddProperty';
 import AgentProfile from '../Pages/Dashboard/Agent/AgentProfile';
 import UserProfile from '../Pages/Dashboard/User/UserProfile';
 import MyAddedProperties from '../Pages/Dashboard/Agent/MyAddedProperties';
+import AllProperties from '../Pages/All Properties/AllProperties';
 
 const routes = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const routes = createBrowserRouter([
             {
                 path : "/register",
                 element : <Register></Register>
+            },
+            {
+                path : "/allProperties",
+                element : <AllProperties/>
             },
         ]
     },
