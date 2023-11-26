@@ -1,11 +1,13 @@
 import React from 'react';
-import useAuth from '../../../hooks/useAuth';
-import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import useAuth from '../../../../hooks/useAuth';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
 const MyWishlist = () => {
     const {user, loading} = useAuth();
     const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
 
     const {data : wishlist = [], isLoading, refetch} = useQuery({
         enabled : !loading && !!user,
@@ -48,7 +50,9 @@ const MyWishlist = () => {
                 </div>
               </div>
               <div className="card-actions flex-col justify-between pt-2">
-                 <button className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none w-full text-black">Make an offer</button>
+                 <button onClick={() => {
+                    navigate(`/dashboard/make-an-offer/${property?._id}`)
+                 }} className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none w-full text-black">Make an offer</button>
                  <button className="px-8 py-1 rounded-md bg-gray-800 border-2 border-black w-full hover:border-[#c28223] hover:bg-gray-800 font-semibold hover:text-white text-gray-300 ">Delete</button>
               </div>
 

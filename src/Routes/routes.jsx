@@ -12,7 +12,8 @@ import MyAddedProperties from '../Pages/Dashboard/Agent/MyAddedProperties';
 import AllProperties from '../Pages/All Properties/AllProperties';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import Details from '../Pages/Details/Details';
-import MyWishlist from '../Pages/Dashboard/User/MyWishlist';
+import MyWishlist from '../Pages/Dashboard/User/MyWishlist/MyWishlist';
+import MakeAnOfferForm from '../Pages/Dashboard/User/MyWishlist/MakeAnOfferForm';
 
 const axiosSecure = useAxiosSecure();
 
@@ -41,7 +42,7 @@ const routes = createBrowserRouter([
                 path : "/property/details/:id",
                 element : <Details/>,
                 loader : async ({params}) => await axiosSecure.get(`/property/${params.id}`)
-            }
+            },
         ]
     },
     {
@@ -56,6 +57,11 @@ const routes = createBrowserRouter([
             {
                 path : 'wishlist',
                 element : <MyWishlist/>
+            },
+            {
+                path : "make-an-offer/:id",
+                element : <MakeAnOfferForm/>,
+                loader : async ({params}) => await axiosSecure.get(`/wishlist/${params.id}`)
             },
             //? Agent only routes
             {
