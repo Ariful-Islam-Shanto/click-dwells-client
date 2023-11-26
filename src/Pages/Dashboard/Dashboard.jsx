@@ -1,7 +1,12 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import useRole from "../../hooks/useRole";
 
 const Dashboard = () => {
+
+  const [role] = useRole();
+  console.log(role);
+  
   return (
     <div className=" min-h-screen flex">
       <div className="w-64 menu">
