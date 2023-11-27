@@ -20,6 +20,7 @@ import PaymentForm from '../Pages/Dashboard/User/PropertyBought/Payment/PaymentF
 import MySoldProperties from '../Pages/Dashboard/Agent/MySoldProperties';
 import UpdateProperty from '../Pages/Dashboard/Agent/UpdateProperty';
 import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile';
+import ManageProperties from '../Pages/Dashboard/Admin/ManageProperties';
 
 
 const axiosSecure = useAxiosSecure();
@@ -109,6 +110,10 @@ const routes = createBrowserRouter([
             {
                 path : 'admin-profile',
                 element : <AdminProfile/>
+            },
+            {
+                path : 'manage-properties',
+                element : <ManageProperties/>
             }
         ]
     }
