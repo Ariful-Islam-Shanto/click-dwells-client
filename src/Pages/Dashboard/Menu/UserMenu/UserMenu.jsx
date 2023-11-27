@@ -24,6 +24,16 @@ const UserMenu = () => {
               Wishlist
             </NavLink>
             </li>
+            <li>
+            <NavLink
+              to="property-bought"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
+              }
+            >
+              Property Bought
+            </NavLink>
+            </li>
         </>
     );
 };

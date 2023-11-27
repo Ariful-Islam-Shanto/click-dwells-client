@@ -55,6 +55,7 @@ const MakeAnOfferForm = () => {
                 location : location,
                 description : wishlist?.description,
                 offeredAmount : offeredAmount,
+                date : new Date(),
                 status : 'pending',
                 agent : {
                     name : wishlist?.agent?.name || agent,

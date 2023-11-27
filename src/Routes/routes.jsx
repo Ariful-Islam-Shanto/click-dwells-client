@@ -15,6 +15,9 @@ import Details from '../Pages/Details/Details';
 import MyWishlist from '../Pages/Dashboard/User/MyWishlist/MyWishlist';
 import MakeAnOfferForm from '../Pages/Dashboard/User/MyWishlist/MakeAnOfferForm';
 import OfferedProperty from '../Pages/Dashboard/Agent/OfferedProperty';
+import PropertyBought from '../Pages/Dashboard/User/PropertyBought/PropertyBought';
+import PaymentForm from '../Pages/Dashboard/User/PropertyBought/Payment/PaymentForm';
+
 
 const axiosSecure = useAxiosSecure();
 
@@ -60,9 +63,18 @@ const routes = createBrowserRouter([
                 element : <MyWishlist/>
             },
             {
+                path : 'property-bought',
+                element : <PropertyBought/>
+            },
+            {
                 path : "make-an-offer/:id",
                 element : <MakeAnOfferForm/>,
                 loader : async ({params}) => await axiosSecure.get(`/wishlist/${params.id}`)
+            },
+            {
+                path : "payment/:id",
+                element : <PaymentForm/>,
+                loader : async ({params}) => await axiosSecure.get(`/propertyBought/${params.id}`)
             },
             //? Agent only routes
             {

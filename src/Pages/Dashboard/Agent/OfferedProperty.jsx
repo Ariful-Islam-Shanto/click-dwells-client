@@ -13,7 +13,7 @@ const OfferedProperty = () => {
     enabled: !loading && !!user,
     queryKey: ["allOfferedProperty"],
     queryFn: async () => {
-      const { data } = await axiosSecure.get("/offeredProperty");
+      const { data } = await axiosSecure.get(`/offeredProperty?email=${user?.email}`);
       return data;
     },
   });
