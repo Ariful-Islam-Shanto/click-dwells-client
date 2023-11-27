@@ -2,19 +2,13 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
-import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import useAuth from '../../../hooks/useAuth';
 
 const UpdateProperty = () => {
 
     const {data : updateProperty } = useLoaderData();
-
     const {user} = useAuth();
-    // const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
-
-    // const image_hosting_key = import.meta.env.VITE_IMAGE_BB_API_KEY;
-    // const imageBB_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 
     const handleSubmit = async e => {
@@ -38,17 +32,6 @@ const UpdateProperty = () => {
         
     try {
         
-        // //? Host the item image into imageBB
-        // const imageFile = { image : image }
-        // const res = await axiosPublic.post(imageBB_Hosting_Api, imageFile , {
-        //     headers : {
-        //         'content-type' : 'multipart/form-data'
-        //     }
-        // });
-
-        // if(res.data.success) {
-        //    const hostedImg = res.data.data.display_url;
-        //    console.log("Hosted Image", hostedImg);
            const property = {
             title : title || updateProperty?.title,
             image :  image || updateProperty?.image,
@@ -84,7 +67,7 @@ const UpdateProperty = () => {
 
     }
 
-    // console.log(updateProperty);
+    
     return (
         <div className='bg-[#0b161e] p-4 mt-4 rounded-md'>
             <h1 className='text-4xl font-bold text-white text-center'>Update Property</h1>

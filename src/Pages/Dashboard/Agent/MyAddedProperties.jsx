@@ -1,15 +1,16 @@
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const MyAddedProperties = () => {
   const { user, loading } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
 
-  const { data: properties = [], isLoading } = useQuery({
+  const { data: properties = [], isLoading, refetch } = useQuery({
     enabled: !loading && !!user,
     queryKey: ["properties"],
     queryFn: async () => {
@@ -17,6 +18,21 @@ const MyAddedProperties = () => {
       return data;
     },
   });
+
+  
+
+   //? Delete property.
+   const { mutate } = useMutation({
+    mutationKey : ['deleteProperty'],
+    mutationFn : async (id) => {
+      const {data} = await axiosSecure.delete(`/deleteProperty/${id}`)
+      if(data.deletedCount > 0) {
+        toast.success('Successfully deleted.')
+        console.log(data);
+        refetch();
+      }
+    }
+  })
 
   console.log(properties);
   return (
@@ -55,7 +71,7 @@ const MyAddedProperties = () => {
                     navigate(`/dashboard/update/${property?._id}`)
                  }} className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none text-black">Update</button>
                  }
-                 <button className="px-8 py-1 rounded-md bg-gray-800 hover:bg-gray-800 font-semibold hover:text-white border-none text-black">Delete</button>
+                 <button onClick={() => mutate(property?._id)} className="px-8 py-1 rounded-md bg-gray-800 hover:bg-gray-800 font-semibold hover:text-white border-none text-black">Delete</button>
               </div>
 
             </div>
