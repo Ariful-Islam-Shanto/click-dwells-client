@@ -18,6 +18,7 @@ import OfferedProperty from '../Pages/Dashboard/Agent/OfferedProperty';
 import PropertyBought from '../Pages/Dashboard/User/PropertyBought/PropertyBought';
 import PaymentForm from '../Pages/Dashboard/User/PropertyBought/Payment/PaymentForm';
 import MySoldProperties from '../Pages/Dashboard/Agent/MySoldProperties';
+import UpdateProperty from '../Pages/Dashboard/Agent/UpdateProperty';
 
 
 const axiosSecure = useAxiosSecure();
@@ -97,6 +98,11 @@ const routes = createBrowserRouter([
             {
                 path : "sold-properties",
                 element : <MySoldProperties/>
+            },
+            {
+                path : "update/:id",
+                element : <UpdateProperty/>,
+                loader : async ({params}) => await axiosSecure.get(`/property/${params.id}`)
             },
         ]
     }

@@ -2,10 +2,12 @@ import React from "react";
 import useAuth from "../../../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { useNavigate } from "react-router-dom";
 
 const MyAddedProperties = () => {
   const { user, loading } = useAuth();
   const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
 
   const { data: properties = [], isLoading } = useQuery({
     enabled: !loading && !!user,
@@ -48,7 +50,11 @@ const MyAddedProperties = () => {
                 </div>
               </div>
               <div className="card-actions justify-between pt-2">
-                 <button className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none text-black">Update</button>
+                 { property?.status !== 'rejected' && 
+                 <button onClick={() => {
+                    navigate(`/dashboard/update/${property?._id}`)
+                 }} className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none text-black">Update</button>
+                 }
                  <button className="px-8 py-1 rounded-md bg-gray-800 hover:bg-gray-800 font-semibold hover:text-white border-none text-black">Delete</button>
               </div>
 
