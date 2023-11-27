@@ -36,22 +36,22 @@ const AgentMenu = () => {
             </li>
             <li>
             <NavLink
-              to="my-sold-properties"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
-              }
-            >
-              My Sold Properties
-            </NavLink>
-            </li>
-            <li>
-            <NavLink
               to="offered-properties"
               className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
               }
             >
               Offered Properties
+            </NavLink>
+            </li>
+            <li>
+            <NavLink
+              to="sold-properties"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
+              }
+            >
+              My Sold Properties
             </NavLink>
             </li>
         </>

@@ -52,9 +52,9 @@ const PropertyBought = () => {
                   </div>
                 </div>
                 <div className="card-actions flex-col justify-between pt-2">
-                   <button onClick={() => {
+                   <button disabled={property?.status === 'pending'} onClick={() => {
                       navigate(`/dashboard/payment/${property._id}`)
-                   }} className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none w-full text-black">Pay</button>
+                   }} className={`px-5 py-1 rounded-md  ${property?.status === 'pending' ? 'bg-[#57524b]' : 'bg-[#ffbb55]'} hover:bg-[#c28223] font-semibold hover:text-white  border-none w-full text-black`}>Pay</button>
                    {/* <button className="px-8 py-1 rounded-md bg-gray-800 border-2 border-black w-full hover:border-[#c28223] hover:bg-gray-800 font-semibold hover:text-white text-gray-300 ">Delete</button> */}
                 </div>
   

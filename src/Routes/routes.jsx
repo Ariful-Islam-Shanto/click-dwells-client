@@ -17,6 +17,7 @@ import MakeAnOfferForm from '../Pages/Dashboard/User/MyWishlist/MakeAnOfferForm'
 import OfferedProperty from '../Pages/Dashboard/Agent/OfferedProperty';
 import PropertyBought from '../Pages/Dashboard/User/PropertyBought/PropertyBought';
 import PaymentForm from '../Pages/Dashboard/User/PropertyBought/Payment/PaymentForm';
+import MySoldProperties from '../Pages/Dashboard/Agent/MySoldProperties';
 
 
 const axiosSecure = useAxiosSecure();
@@ -92,7 +93,11 @@ const routes = createBrowserRouter([
             {
                 path : 'offered-properties',
                 element : <OfferedProperty/>
-            }
+            },
+            {
+                path : "sold-properties",
+                element : <MySoldProperties/>
+            },
         ]
     }
 ])
