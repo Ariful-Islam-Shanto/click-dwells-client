@@ -19,14 +19,14 @@ const PaymentForm = () => {
         title : propertyBought?.title,
         propertyId : propertyBought?.propertyId,
         wishlistId : propertyBought?.wishlistId,
+        offeredId : propertyBought?._id,
         image : propertyBought?.image,
         location : propertyBought?.location,
         description : propertyBought?.description,
         totalAmount : propertyBought?.offeredAmount,
-        status : propertyBought?.status,
         agent : {
             name : propertyBought?.agent?.name, 
-            email : propertyBought?.email,
+            email : propertyBought?.agent?.email,
             image : propertyBought?.agent?.image
         }
 

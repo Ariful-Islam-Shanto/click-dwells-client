@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import useAuth from '../../../../../hooks/useAuth'
 import useAxiosPublic from '../../../../../hooks/useAxiosPublic'
 import useAxiosSecure from '../../../../../hooks/useAxiosSecure'
+import { useMutation } from '@tanstack/react-query'
 
 const CheckoutForm = ({ propertyInfo}) => {
   const stripe = useStripe()
@@ -30,6 +31,18 @@ const CheckoutForm = ({ propertyInfo}) => {
   }, [propertyInfo, axiosSecure])
 
   console.log('client secret', clientSecret);
+
+
+   const {mutate} = useMutation({
+    mutationKey : ['payment'],
+    mutationFn : async (propertyInfo) => {
+        const {data} = await axiosSecure.post(`/purchased-properties`, propertyInfo);
+        console.log(data);
+        if(data.insertedId) {
+            toast.success('Payment Successful.')
+        }
+    }
+   })
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -81,9 +94,11 @@ const CheckoutForm = ({ propertyInfo}) => {
         ...propertyInfo,
         transactionId: paymentIntent.id,
         date: new Date(),
+        status : 'bought'
       }
       console.log(paymentInfo);
 
+     mutate(paymentInfo)
     //   try {
 
     //     //? Save payment information to the database
