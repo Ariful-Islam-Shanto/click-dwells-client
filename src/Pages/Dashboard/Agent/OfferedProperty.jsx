@@ -1,13 +1,15 @@
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 const OfferedProperty = () => {
   const { user, loading } = useAuth();
   const axiosSecure = useAxiosSecure();
+  
 
-  const { data: offeredProperty = [], isLoading } = useQuery({
+  const { data: offeredProperty = [], isLoading, refetch : refetchAllOffer } = useQuery({
     enabled: !loading && !!user,
     queryKey: ["allOfferedProperty"],
     queryFn: async () => {
@@ -16,6 +18,23 @@ const OfferedProperty = () => {
     },
   });
 
+  
+  const {mutate} = useMutation({
+    mutationKey : ['updateStatus'],
+    mutationFn : async (accepted) => {
+        const { data } = await axiosSecure.put(`/updateOfferedStatus/${accepted.id}?status=${accepted.status}`);
+        console.log(data);
+    },
+    onSuccess : () => {
+        toast.success('Successfully updated the status.')
+        refetchAllOffer();
+    } 
+  })
+
+  const handleUpdateStatus = (status, id) => {
+    console.log(status, id);
+    mutate({status, id})
+  }
   console.log(offeredProperty);
   return (
     <div className="space-y-4 py-8 ">
@@ -76,8 +95,14 @@ const OfferedProperty = () => {
                   <br />
                 </td>
                 <th>
-                  <button className="btn ml-3 bg-[#377e65] btn-xs">Accept</button>
-                  <button className="btn bg-[#d45a5a] btn-xs">Reject</button>
+                 {property?.status === 'pending' && <>
+                 <button onClick={() => handleUpdateStatus('accepted', property?._id)} className="btn ml-3 bg-[#377e65] btn-xs">Accept</button>
+                  <button onClick={() => handleUpdateStatus('rejected', property?._id)} className="btn bg-[#d45a5a] btn-xs">Reject</button>
+                 </>}
+
+                 {property?.status === 'accepted' &&   <p className=" text-[#377e65]">Accepted</p>}
+
+                 {property?.status === 'rejected' &&   <p className=" text-[#d45a5a]">Rejected</p>}
                 </th>
               </tr>
             ))}
