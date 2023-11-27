@@ -1,8 +1,9 @@
 import React from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const MyWishlist = () => {
     const {user, loading} = useAuth();
@@ -16,6 +17,19 @@ const MyWishlist = () => {
             const {data} = await axiosSecure.get(`/wishlist?email=${user?.email}`);
             return data;
         }
+    })
+
+    //? Delete property.
+    const {mutate} = useMutation({
+      mutationKey : ['deleteWishlist'],
+      mutationFn : async (id) => {
+        const {data} = await axiosSecure.delete(`/deleteWishlist/${id}`)
+        if(data.deletedCount > 0) {
+          toast.success('Successfully deleted.')
+          console.log(data);
+          refetch();
+        }
+      }
     })
 
     console.log(wishlist);
@@ -53,7 +67,7 @@ const MyWishlist = () => {
                  <button onClick={() => {
                     navigate(`/dashboard/make-an-offer/${property?._id}`)
                  }} className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none w-full text-black">Make an offer</button>
-                 <button className="px-8 py-1 rounded-md bg-gray-800 border-2 border-black w-full hover:border-[#c28223] hover:bg-gray-800 font-semibold hover:text-white text-gray-300 ">Delete</button>
+                 <button onClick={() => mutate(property?._id)} className="px-8 py-1 rounded-md bg-gray-800 border-2 border-black w-full hover:border-[#c28223] hover:bg-gray-800 font-semibold hover:text-white text-gray-300 ">Delete</button>
               </div>
 
             </div>

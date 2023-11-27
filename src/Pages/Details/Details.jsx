@@ -45,6 +45,8 @@ const Details = () => {
         console.log(data);
         if(data.insertedId) {
             toast.success('Added to wishlist');
+        }else {
+            toast.error('Already added.')
         }
        } catch (error) {
         console.log(error);
