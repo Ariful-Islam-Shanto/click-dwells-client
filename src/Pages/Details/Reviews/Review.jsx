@@ -70,7 +70,7 @@ const Review = ({ propertyInfo }) => {
 
   return (
     <div className="py-14 space-y-12">
-      <h1 className="text-4xl text-center text-white font-bold">
+      <h1 className="text-4xl text-center text-black font-bold">
         All the reviews made by our beloved.
       </h1>
       <div className="flex h-[400px] gap-4">

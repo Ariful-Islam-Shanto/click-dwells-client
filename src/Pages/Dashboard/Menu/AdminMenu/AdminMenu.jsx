@@ -34,6 +34,16 @@ const AdminMenu = () => {
              Manage Users
             </NavLink> 
             </li>  
+          <li>
+          <NavLink
+              to="manage-reviews"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
+              }
+            >
+             Manage Reviews
+            </NavLink> 
+            </li>  
         </>
     );
 };

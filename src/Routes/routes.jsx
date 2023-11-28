@@ -23,6 +23,8 @@ import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile';
 import ManageProperties from '../Pages/Dashboard/Admin/ManageProperties';
 import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
 import MyReviews from '../Pages/Dashboard/User/MyReviews/MyReviews';
+import ManageReviews from '../Pages/Dashboard/Admin/ManageReviews';
+
 
 
 const axiosSecure = useAxiosSecure();
@@ -124,6 +126,10 @@ const routes = createBrowserRouter([
             {
                 path : 'manage-users',
                 element : <ManageUsers/>
+            },
+            {
+                path : 'manage-reviews',
+                element : <ManageReviews/>
             }
         ]
     }
