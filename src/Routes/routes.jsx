@@ -21,6 +21,7 @@ import MySoldProperties from '../Pages/Dashboard/Agent/MySoldProperties';
 import UpdateProperty from '../Pages/Dashboard/Agent/UpdateProperty';
 import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile';
 import ManageProperties from '../Pages/Dashboard/Admin/ManageProperties';
+import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
 
 
 const axiosSecure = useAxiosSecure();
@@ -114,6 +115,10 @@ const routes = createBrowserRouter([
             {
                 path : 'manage-properties',
                 element : <ManageProperties/>
+            },
+            {
+                path : 'manage-users',
+                element : <ManageUsers/>
             }
         ]
     }

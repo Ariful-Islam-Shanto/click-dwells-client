@@ -24,6 +24,16 @@ const AdminMenu = () => {
              Manage Properties
             </NavLink> 
             </li>  
+          <li>
+          <NavLink
+              to="manage-users"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
+              }
+            >
+             Manage Users
+            </NavLink> 
+            </li>  
         </>
     );
 };
