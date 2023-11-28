@@ -38,9 +38,9 @@ const OfferedProperty = () => {
   console.log(offeredProperty);
   return (
     <div className="space-y-4 py-8 ">
-      <h1 className="text-4xl text-center text-white font-bold">
-        My Added Properties
-      </h1>
+      <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
+         Offered Properties
+        </h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -103,6 +103,8 @@ const OfferedProperty = () => {
                  {property?.status === 'accepted' &&   <p className=" text-[#377e65]">Accepted</p>}
 
                  {property?.status === 'rejected' &&   <p className=" text-[#d45a5a]">Rejected</p>}
+
+                 {property?.status === 'bought' &&   <p className=" text-blue-400">Bought</p>}
                 </th>
               </tr>
             ))}

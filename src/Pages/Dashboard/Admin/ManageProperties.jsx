@@ -39,17 +39,17 @@ const ManageProperties = () => {
       }
     return (
         <div className="space-y-4 py-8 ">
-      <h1 className="text-4xl text-center text-white font-bold">
+      <h1 className="text-4xl text-center text-black font-bold">
         Manage Properties
       </h1>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-scroll w-full">
         <table className="table">
           {/* head */}
           <thead>
             <tr>
               <th>Property</th>
               <th>Buyer</th>
-              <th>Offered Price</th>
+              <th>Price Range</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -95,7 +95,7 @@ const ManageProperties = () => {
                   {property?.price_range}
                   <br />
                 </td>
-                <th>
+                <th className=''>
                  {property?.status === 'pending' && <>
                  <button onClick={() => handleUpdateStatus('verified', property?._id)} className="btn ml-3 bg-[#377e65] btn-xs">Verify</button>
                   <button onClick={() => handleUpdateStatus('rejected', property?._id)} className="btn bg-[#d45a5a] btn-xs">Reject</button>

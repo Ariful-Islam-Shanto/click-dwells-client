@@ -22,9 +22,10 @@ const AllProperties = () => {
 
             <Container>
             <Navbar></Navbar>
-            <h1 className='text-4xl mb-8 text-white font-bold'>Find your next place to live</h1>
-                
-            <div className='grid grid-cols-1 md:grid-cols-3'>
+            <h1 className="text-4xl mb-8 border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
+            Find your next place to live
+        </h1>  
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6'>
                 {
                     allProperties?.map(property => 
                         <div key={property._id} className="card card-compact h-full bg-base-100 shadow-xl">

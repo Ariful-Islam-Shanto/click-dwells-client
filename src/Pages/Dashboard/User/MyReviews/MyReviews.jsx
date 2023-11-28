@@ -39,7 +39,7 @@ const MyReviews = () => {
         <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
          My Reviews
         </h1>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {reviews?.map((review) => (
     
 

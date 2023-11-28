@@ -100,10 +100,10 @@ const ManageUsers = () => {
                       <div className="font-bold">{user?.role}</div>
                   </div>
                 </td>
-                <th className=''>
-                 <button onClick={() => handleUpdateStatus('admin', user?._id)} className="btn ml-3 bg-[#37607e] btn-xs">Make Admin</button>
-                  <button onClick={() => handleUpdateStatus('agent', user?._id)} className="btn bg-[#3c8e7f] btn-xs">Make Agent</button>
-                  <button onClick={() => handleUpdateStatus('fraud', user?._id)} className="btn bg-[#d45a5a] btn-xs">Mark As Fraud</button>
+                <th className='flex items-center justify-center flex-col md:flex-col lg:flex-col xl:flex-row md:static lg:static xl:static'>
+                 <button onClick={() => handleUpdateStatus('admin', user?._id)} className="btn ml-3 bg-[#37607e] btn-xs text-white">Admin</button>
+                  <button onClick={() => handleUpdateStatus('agent', user?._id)} className="btn bg-[#3c8e7f] btn-xs text-white">Agent</button>
+                  <button onClick={() => handleUpdateStatus('fraud', user?._id)} className="btn bg-[#d45a5a] btn-xs text-white">Fraud</button>
 
                 </th>
                 <th>

@@ -22,7 +22,7 @@ const PropertyBought = () => {
       console.log(propertyBought);
     return (
         <div className="space-y-6 py-8">
-        <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-white font-bold">
+        <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
          Property Bought
         </h1>
   
@@ -41,8 +41,8 @@ const PropertyBought = () => {
                   {property?.title}
                   <div className="badge text-gray-800 bg-blue-200"> {property?.status}</div>
                 </h2>
-                <p>{property?.location}</p>
-                <p>{property?.offeredAmount}</p>
+                <p className='text-neutral-200'>{property?.location}</p>
+                <p className='text-neutral-200'>{property?.offeredAmount}</p>
                 <div className="flex items-center justify-between">
                   <div className="w-10 h-10 rounded-full">
                       <img src={property?.agent?.image || user?.photoURL} alt=""  className="h-full w-full object-cover rounded-full"/>
@@ -52,7 +52,7 @@ const PropertyBought = () => {
                   </div>
                 </div>
                 <div className="card-actions flex-col justify-between pt-2">
-                   <button disabled={property?.status === 'pending'} onClick={() => {
+                   <button disabled={property?.status === 'pending' || property?.status === 'bought'} onClick={() => {
                       navigate(`/dashboard/payment/${property._id}`)
                    }} className={`px-5 py-1 rounded-md  ${property?.status === 'pending' ? 'bg-[#57524b]' : 'bg-[#ffbb55]'} hover:bg-[#c28223] font-semibold hover:text-white  border-none w-full text-black`}>Pay</button>
                    {/* <button className="px-8 py-1 rounded-md bg-gray-800 border-2 border-black w-full hover:border-[#c28223] hover:bg-gray-800 font-semibold hover:text-white text-gray-300 ">Delete</button> */}

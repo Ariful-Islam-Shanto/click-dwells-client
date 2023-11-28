@@ -44,6 +44,16 @@ const AdminMenu = () => {
              Manage Reviews
             </NavLink> 
             </li>  
+          <li>
+          <NavLink
+              to="advertise-property"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-[#D1F366] text-black" : " "
+              }
+            >
+             Advertise Property
+            </NavLink> 
+            </li>  
         </>
     );
 };

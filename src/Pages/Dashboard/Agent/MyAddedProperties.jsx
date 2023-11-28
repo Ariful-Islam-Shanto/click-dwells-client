@@ -37,11 +37,11 @@ const MyAddedProperties = () => {
   console.log(properties);
   return (
     <div className="space-y-6 py-8">
-      <h1 className="text-4xl text-center text-white font-bold">
-        My Added Properties
-      </h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    
+      <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
+         My Added Properties
+        </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
         {properties?.map((property) => (
           <div key={property._id} className="card h-full bg-[#131b2d] shadow-xl">
             <figure>

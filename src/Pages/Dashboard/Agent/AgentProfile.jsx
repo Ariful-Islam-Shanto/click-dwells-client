@@ -10,7 +10,7 @@ const AgentProfile = () => {
     backgroundColor: "rgba(0, 0, 0, 0.5)"
   };
   return (
-    <div className="bg-[#141627] min-h-screen space-y-6 flex items-center justify-center">
+    <div className="bg-white md:bg-white lg:bg-[#141627] xl:bg-[#141627] min-h-screen space-y-6 flex items-center justify-center">
         <div className="bg-[#F4F8EE] flex flex-col items-center p-6 rounded-lg gap-3">
             <div className="space-y-6 flex-1 items-center flex">
        <div className="space-y-4">

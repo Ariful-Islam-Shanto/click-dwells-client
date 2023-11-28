@@ -24,6 +24,7 @@ import ManageProperties from '../Pages/Dashboard/Admin/ManageProperties';
 import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
 import MyReviews from '../Pages/Dashboard/User/MyReviews/MyReviews';
 import ManageReviews from '../Pages/Dashboard/Admin/ManageReviews';
+import AdvertiseProperty from '../Pages/Dashboard/Admin/AdvertiseProperty';
 
 
 
@@ -130,6 +131,10 @@ const routes = createBrowserRouter([
             {
                 path : 'manage-reviews',
                 element : <ManageReviews/>
+            },
+            {
+                path : 'advertise-property',
+                element : <AdvertiseProperty/>
             }
         ]
     }
