@@ -32,6 +32,7 @@ const Review = ({ propertyInfo }) => {
       if (data.insertedId) {
         toast.success("Successfully added a review.");
         console.log(data);
+        refetch();
       }
     },
   });
@@ -68,7 +69,7 @@ const Review = ({ propertyInfo }) => {
   };
 
   return (
-    <div className="py-14 space-y-12 ">
+    <div className="py-14 space-y-12">
       <h1 className="text-4xl text-center text-white font-bold">
         All the reviews made by our beloved.
       </h1>
@@ -89,16 +90,16 @@ const Review = ({ propertyInfo }) => {
               {reviews?.map((review) => (
                 <div
                   key={review._id}
-                  className="card bg-gray-50 shadow-xl flex items-center flex-row px-6 justify-center"
+                  className="card bg-gray-50 shadow-xl flex items-center flex-row h-[100px] py-4 px-6 gap-3 justify-center"
                 >
                   <div className="avatar">
                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 flex ">
                       <img src={review?.reviewer?.image} />
                     </div>
                   </div>
-                  <div className="card-body">
-                    <h2 className="card-title text-xl text-black ">{review?.reviewer?.name}</h2>
-                    <p>{review?.description}</p>
+                  <div className="">
+                    <h2 className="font-bold text-black ">{review?.reviewer?.name}</h2>
+                    <p className="text-neutral-600 font-thin">{review?.description}</p>
                   </div>
                 </div>
               ))}

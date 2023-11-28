@@ -22,6 +22,7 @@ import UpdateProperty from '../Pages/Dashboard/Agent/UpdateProperty';
 import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile';
 import ManageProperties from '../Pages/Dashboard/Admin/ManageProperties';
 import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
+import MyReviews from '../Pages/Dashboard/User/MyReviews/MyReviews';
 
 
 const axiosSecure = useAxiosSecure();
@@ -80,6 +81,10 @@ const routes = createBrowserRouter([
                 path : "payment/:id",
                 element : <PaymentForm/>,
                 loader : async ({params}) => await axiosSecure.get(`/propertyBought/${params.id}`)
+            },
+            {
+                path : "my-reviews",
+                element : <MyReviews/>
             },
             //? Agent only routes
             {
