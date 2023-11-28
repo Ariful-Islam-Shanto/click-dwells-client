@@ -25,6 +25,7 @@ import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
 import MyReviews from '../Pages/Dashboard/User/MyReviews/MyReviews';
 import ManageReviews from '../Pages/Dashboard/Admin/ManageReviews';
 import AdvertiseProperty from '../Pages/Dashboard/Admin/AdvertiseProperty';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -49,11 +50,11 @@ const routes = createBrowserRouter([
             },
             {
                 path : "/allProperties",
-                element : <AllProperties/>
+                element : <PrivateRoute><AllProperties/></PrivateRoute>
             },
             {
                 path : "/property/details/:id",
-                element : <Details/>,
+                element : <PrivateRoute><Details/></PrivateRoute>,
                 loader : async ({params}) => await axiosSecure.get(`/property/${params.id}`)
             },
         ]

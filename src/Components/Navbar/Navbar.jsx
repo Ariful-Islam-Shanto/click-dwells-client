@@ -86,7 +86,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex gap-12"
+              className="menu menu-sm text-black dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex gap-6"
             >
               {navLinks}
             </ul>
@@ -94,10 +94,10 @@ const Navbar = () => {
           <div className="w-16 h-16 flex items-center justify-center">
             <Lottie animationData={logo}></Lottie>
           </div>
-          <a className="text-xl font-bold tex-white">ClickDwells</a>
+          <a className="text-xl font-bold text-black">ClickDwells</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex gap-12">{navLinks}</ul>
+          <ul className="menu menu-horizontal text-black px-1 flex gap-12">{navLinks}</ul>
         </div>
 
         {/* //? User Profile */}

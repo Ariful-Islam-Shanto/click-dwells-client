@@ -29,7 +29,7 @@ const navigate = useNavigate();
   return (
     <Container>
       <div className="space-y-8 py-20">
-        <div>
+        <div className="space-y-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="169"
