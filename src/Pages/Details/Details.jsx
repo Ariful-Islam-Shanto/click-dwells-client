@@ -7,6 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
+import Review from './Reviews/Review';
 
 const Details = () => {
 
@@ -87,6 +88,9 @@ const Details = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* reviews section */}
+               <Review propertyInfo={data}/>
             </Container>
         </div>
     );

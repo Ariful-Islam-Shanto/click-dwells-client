@@ -158,7 +158,7 @@ const AddProperty = () => {
               </div>
               <div className="form-control col-span-1 md:col-span-4">
                 <label className="label">
-                  <span className="label-text">Price Range</span>
+                  <span className="label-text">Description</span>
                 </label>
                 <textarea name="description" id="" cols="30" rows="2" className='px-5 py-5 rounded-lg' placeholder='Description'></textarea>
               </div>
