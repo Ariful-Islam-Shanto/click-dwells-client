@@ -6,6 +6,7 @@ import Footer from "../../Components/Footer/Footer";
 import Advertisement from "./Advertisement";
 import Testimonial from "./Testimonial";
 import OurServices from "./OurServices";
+import CallToAction from "./CallToAction";
 
 const Home = () => {
   const bg = {
@@ -28,6 +29,7 @@ const Home = () => {
       <OurServices/>
       <Advertisement/>
       <Testimonial/>
+      <CallToAction/>
       <Footer />
     </div>
   );
