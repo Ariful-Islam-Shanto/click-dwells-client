@@ -5,6 +5,7 @@ import Container from "../../Components/Container/Container";
 import Footer from "../../Components/Footer/Footer";
 import Advertisement from "./Advertisement";
 import Testimonial from "./Testimonial";
+import OurServices from "./OurServices";
 
 const Home = () => {
   const bg = {
@@ -24,6 +25,7 @@ const Home = () => {
           <Banner />
         </Container>
       </div>
+      <OurServices/>
       <Advertisement/>
       <Testimonial/>
       <Footer />

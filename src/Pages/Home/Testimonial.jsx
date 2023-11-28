@@ -67,7 +67,7 @@ const Testimonial = () => {
           {reviews?.map((review) => (
             <SwiperSlide key={review._id} className="">
               <div className=" mx-24 text-center flex items-center justify-center flex-col space-y-8 py-24">
-                <FaQuoteLeft className="text-4xl text-center"/>
+                <FaQuoteLeft className="text-6xl text-center font-bold"/>
                 {/* <Rating
       style={{ maxWidth: 180 }}
       value={3}
