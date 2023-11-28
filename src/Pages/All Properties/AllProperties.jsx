@@ -29,7 +29,7 @@ const AllProperties = () => {
                 {
                     allProperties?.map(property => 
                         <div key={property._id} className="card card-compact h-full bg-base-100 shadow-xl">
-                        <figure><img src={property?.image} alt="Property" className='h-[200px] object-cover rounded-md'/></figure>
+                        <figure><img src={property?.image} alt="Property" className='h-[200px] object-cover rounded-md w-full'/></figure>
                         <div className="card-body">
                             <div className='flex items-center justify-between'>
 
