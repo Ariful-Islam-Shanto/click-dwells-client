@@ -3,6 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Banner from "./Banner";
 import Container from "../../Components/Container/Container";
 import Footer from "../../Components/Footer/Footer";
+import Advertisement from "./Advertisement";
 
 const Home = () => {
   const bg = {
@@ -22,6 +23,7 @@ const Home = () => {
           <Banner />
         </Container>
       </div>
+      <Advertisement/>
       <Footer />
     </div>
   );

@@ -41,7 +41,7 @@ const Details = () => {
         console.log(property);
 
        try {
-        const { data } = await axiosSecure.post('/wishlist', property);
+        const { data } = await axiosSecure.post(`/wishlist?email=${user?.email}`, property);
 
         console.log(data);
         if(data.insertedId) {

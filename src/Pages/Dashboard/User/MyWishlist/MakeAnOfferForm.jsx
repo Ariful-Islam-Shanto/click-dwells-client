@@ -82,9 +82,12 @@ const MakeAnOfferForm = () => {
 
   const { mutate } = useMutation({
     mutationFn : async (offeredInfo) => {
-        const { data } = await axiosSecure.post('/offeredProperty', offeredInfo);
+        const { data } = await axiosSecure.post(`/offeredProperty?email=${user?.email}`, offeredInfo);
         if(data.insertedId) {
             toast.success('Successfully offered.')
+            console.log(data);
+        }else{
+            toast.error('Already Offered')
             console.log(data);
         }
     } ,

@@ -3,9 +3,11 @@ import useAuth from '../../../hooks/useAuth';
 import toast from 'react-hot-toast';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import useRole from '../../../hooks/useRole';
 
 const AddProperty = () => {
     const {user} = useAuth();
+    const [role] = useRole();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
 
@@ -165,7 +167,7 @@ const AddProperty = () => {
 
 
               <div className="form-control mt-6 w-full">
-                <button type="submit" className="btn bg-[#ffbb55] border-none text-gray-800 ">Add Property</button>
+                <button disabled={!role || role === 'fraud'} type="submit" className="btn bg-[#ffbb55] border-none text-gray-800 ">Add Property</button>
               </div>
             </form>
         </div>

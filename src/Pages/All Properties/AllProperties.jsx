@@ -25,7 +25,7 @@ const AllProperties = () => {
             <h1 className="text-4xl mb-8 border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
             Find your next place to live
         </h1>  
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 py-8'>
                 {
                     allProperties?.map(property => 
                         <div key={property._id} className="card card-compact h-full bg-base-100 shadow-xl">
@@ -46,7 +46,7 @@ const AllProperties = () => {
                           <div className="card-actions justify-between">
                             <div className='flex items-center gap-2'>
                                 <img src={property?.agent?.image} alt="Agent" className='w-10 h-10 rounded-full'/>
-                                <h1 className='text-sm text-white font-semibold'></h1>
+                                <h1 className='text-sm text-gray-700 font-semibold'>{property?.agent?.name}</h1>
                             </div>
                             <Link to={`/property/details/${property?._id}`}>
                             <button className="btn btn-primary">Details</button>
