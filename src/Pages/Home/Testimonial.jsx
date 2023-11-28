@@ -13,6 +13,7 @@ import { Navigation } from "swiper/modules";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Container from "../../Components/Container/Container";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const Testimonial = () => {
   const axiosPublic = useAxiosPublic();
@@ -66,6 +67,7 @@ const Testimonial = () => {
           {reviews?.map((review) => (
             <SwiperSlide key={review._id} className="">
               <div className=" mx-24 text-center flex items-center justify-center flex-col space-y-8 py-24">
+                <FaQuoteLeft className="text-4xl text-center"/>
                 {/* <Rating
       style={{ maxWidth: 180 }}
       value={3}
