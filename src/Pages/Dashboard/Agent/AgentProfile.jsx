@@ -34,6 +34,7 @@ const AgentProfile = () => {
           Name : {user?.displayName}
         </h1>
         <h1 className="text-sm text-white font-bold">Email : {user?.email}</h1>
+        <h1 className="text-sm text-white font-bold">Role : {user?.role}</h1>
         </div>
       </div>
         </div>

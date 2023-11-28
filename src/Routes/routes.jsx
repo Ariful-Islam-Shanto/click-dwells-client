@@ -26,6 +26,7 @@ import MyReviews from '../Pages/Dashboard/User/MyReviews/MyReviews';
 import ManageReviews from '../Pages/Dashboard/Admin/ManageReviews';
 import AdvertiseProperty from '../Pages/Dashboard/Admin/AdvertiseProperty';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ErrorPage from '../Components/ErrorPage/ErrorPage';
 
 
 
@@ -35,6 +36,7 @@ const routes = createBrowserRouter([
     {
         path : '/',
         element : <MainLayout></MainLayout>,
+        errorElement : <ErrorPage/>,
         children : [
             {
                 path : "/",
