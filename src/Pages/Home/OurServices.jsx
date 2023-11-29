@@ -8,7 +8,7 @@ const OurServices = () => {
   return (
     <div className="py-16">
       <Container>
-        <div className="space-y-8">
+        <div className="space-y-8 px-5 md:px-0">
           <div className="space-y-2 flex flex-col items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"

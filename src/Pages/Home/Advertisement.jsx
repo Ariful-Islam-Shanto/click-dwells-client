@@ -28,7 +28,7 @@ const navigate = useNavigate();
   console.log(advertiseProperties);
   return (
     <Container>
-      <div className="space-y-8 py-20">
+      <div className="space-y-8 py-20 px-5 md:px-0">
         <div className="space-y-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ const navigate = useNavigate();
           </h1>
         </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 ">
             {
                 advertiseProperties?.map(property => 
                     <div key={property._id} className="card bg-base-100 w-full h-full flex flex-col justify-between shadow-xl">

@@ -40,19 +40,7 @@ const AgentProfile = () => {
         </div>
       </div>
         </div>
-   {/* <div className="bg-[#1C1F37] my-auto rounded-lg drop-shadow-md h-full mx-auto flex items-center justify-start p-10 flex-row space-y-6">
-        <div className="w-20 h-20 rounded-full">
-          <img src={user?.photoURL} alt="h-full w-full rounded-full" />
-        </div>
-        <div>
-        <h1 className="text-2xl text-white font-bold">
-          Name : {user?.displayName}
-        </h1>
-        <h1 className="text-2xl text-white font-bold">Email : {user?.email}</h1>
-        </div>
-      </div> */}
      
-  
     </div>
   );
 };

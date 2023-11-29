@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <div className="bg-base-200 w-full">
     <Container>
-      <footer className="flex items-center justify-between footer p-10  text-base-content">
-        <aside className="">
+      <footer className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-between footer p-10  text-base-content">
+        <aside className="flex items-center flex-col justify-center">
             <div className="w-20 h-20">
           <Lottie animationData={logo}></Lottie>
           </div>
-          <p>
-           <span className="text-whit text-xl text-bold"> ClickDwells</span>
+          <p className="text-center md:text-left">
+           <span className=" text-xl text-bold"> ClickDwells</span>
             <br />
             Providing reliable real state since 1992
           </p>
@@ -33,7 +33,7 @@ const Footer = () => {
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </nav>
-        <nav>
+        <nav className="flex flex-col items-center justify-between">
           <header className="footer-title">Legal</header>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
