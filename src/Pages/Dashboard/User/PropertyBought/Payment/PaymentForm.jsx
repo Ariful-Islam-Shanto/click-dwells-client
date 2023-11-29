@@ -34,6 +34,7 @@ const PaymentForm = () => {
 
     return (
         <div>
+           
               <Elements stripe={stripePromise}>
                     <CheckoutForm propertyInfo={propertyInfo} />
                 </Elements>

@@ -1,8 +1,10 @@
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
+import useRole from "../../../hooks/useRole";
 
 const AdminProfile = () => {
   const { user } = useAuth();
+  const [role] = useRole();
 
   const bg = {
     backgroundImage: `url('https://i.ibb.co/wrKJtvH/Astral-Symphony.jpg')`,
@@ -34,7 +36,7 @@ const AdminProfile = () => {
           Name : {user?.displayName}
         </h1>
         <h1 className="text-sm text-white font-bold">Email : {user?.email}</h1>
-        <h1 className="text-sm text-white font-bold">Role : {user?.role}</h1>
+        <h1 className="text-sm text-white font-bold">Role : {role}</h1>
         </div>
 
       </div>

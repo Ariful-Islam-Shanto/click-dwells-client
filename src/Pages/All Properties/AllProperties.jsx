@@ -70,8 +70,8 @@ const AllProperties = () => {
         >
 
           <option value="default">Sort By Price</option>
-          <option value="asc">High to Low</option>
-          <option value="desc">Low to High</option>
+          <option value="asc">Low to High</option>
+          <option value="desc">High to Low</option>
         </select>
         </div>
 

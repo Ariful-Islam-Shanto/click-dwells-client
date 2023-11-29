@@ -104,7 +104,7 @@ const OfferedProperty = () => {
 
                  {property?.status === 'rejected' &&   <p className=" text-[#d45a5a]">Rejected</p>}
 
-                 {property?.status === 'bought' &&   <p className=" text-blue-400">Bought</p>}
+                 {property?.status === 'bought' &&   <p className=" text-blue-400">Sold</p>}
                 </th>
               </tr>
             ))}

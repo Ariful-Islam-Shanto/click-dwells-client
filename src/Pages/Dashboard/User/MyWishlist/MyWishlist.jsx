@@ -64,7 +64,7 @@ const MyWishlist = () => {
                 </div>
               </div>
               <div className="card-actions flex-col justify-between pt-2">
-                 <button onClick={() => {
+                 <button disabled={property?.status === 'bought'} onClick={() => {
                     navigate(`/dashboard/make-an-offer/${property?._id}`)
                  }} className="px-5 py-1 rounded-md bg-[#ffbb55] hover:bg-[#c28223] font-semibold hover:text-white  border-none w-full text-black">Make an offer</button>
                  <button onClick={() => mutate(property?._id)} className="px-8 py-1 rounded-md bg-gray-800 border-2 border-black w-full hover:border-[#c28223] hover:bg-gray-800 font-semibold hover:text-white text-gray-300 ">Delete</button>

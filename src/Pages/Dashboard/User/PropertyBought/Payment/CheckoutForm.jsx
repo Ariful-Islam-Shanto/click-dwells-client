@@ -116,7 +116,8 @@ const CheckoutForm = ({ propertyInfo }) => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-between">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center gap-4">
+        <h1 className='text-4xl text-center font-bold text-black'>Make a Payment</h1>
       <form
         className="my-2 bg-[#122c4e] w-full md:w-1/2 p-10 rounded-md  mx-auto"
         onSubmit={handleSubmit}
@@ -150,7 +151,7 @@ const CheckoutForm = ({ propertyInfo }) => {
             // disabled={!stripe || !clientSecret || processing}
             className="inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
           >
-            `Pay ${propertyInfo?.totalAmount}$`
+            {transactionId ? transactionId : `Pay ${propertyInfo?.totalAmount}$`}
           </button>
         </div>
       </form>
