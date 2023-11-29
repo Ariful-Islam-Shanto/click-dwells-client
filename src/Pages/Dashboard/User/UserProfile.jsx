@@ -12,7 +12,7 @@ const UserProfile = () => {
     backgroundColor: "rgba(0, 0, 0, 0.5)"
   };
   return (
-    <div className="bg-[#141627] min-h-screen space-y-6 flex items-center justify-center">
+    <div className="md:bg-[#141627] min-h-screen space-y-6 flex items-center justify-center">
         <div className="bg-[#F4F8EE] flex flex-col items-center p-6 rounded-lg gap-3">
             <div className="space-y-6 flex-1 items-center flex">
        <div className="space-y-4">
@@ -40,17 +40,6 @@ const UserProfile = () => {
         </div>
       </div>
         </div>
-   {/* <div className="bg-[#1C1F37] my-auto rounded-lg drop-shadow-md h-full mx-auto flex items-center justify-start p-10 flex-row space-y-6">
-        <div className="w-20 h-20 rounded-full">
-          <img src={user?.photoURL} alt="h-full w-full rounded-full" />
-        </div>
-        <div>
-        <h1 className="text-2xl text-white font-bold">
-          Name : {user?.displayName}
-        </h1>
-        <h1 className="text-2xl text-white font-bold">Email : {user?.email}</h1>
-        </div>
-      </div> */}
      
   
     </div>

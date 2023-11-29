@@ -15,7 +15,6 @@ const AdvertiseProperty = () => {
         }
     })
 
-    console.log(allProperties);
 
     const {mutate} = useMutation({
         mutationKey : ['updateAdvertise'],

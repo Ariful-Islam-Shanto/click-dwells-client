@@ -9,11 +9,6 @@ import OurServices from "./OurServices";
 import CallToAction from "./CallToAction";
 
 const Home = () => {
-  const bg = {
-    backgroundImage: `linear-gradient(to right, #fff9ce63, #00000063), url('https://i.ibb.co/6tLg5HD/etienne-beauregard-riverin-B0a-Cv-AVSX8-E-unsplash.jpg')`,
-    backgroundSize: "cover",
-    backgroundOpacity : '50%'
-  };
 
   return (
     <div>

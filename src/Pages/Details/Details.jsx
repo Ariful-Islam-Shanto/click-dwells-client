@@ -12,19 +12,10 @@ import Review from './Reviews/Review';
 const Details = () => {
 
     const {data = {}} = useLoaderData();
-    // console.log(data);
-    // const { id } = useParams();
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
 
-    // const { data = {} , isLoading, refetch} = useQuery({
-    //     enabled : !!id,
-    //     queryKey : ['details'],
-    //     queryFn : async () => {
-    //         const { data } = await axiosSecure.get(`/property/${id}`);
-    //         return data;
-    //     }
-    // })
+   
 
 
     const handleAddToWishList = async () => {
@@ -77,11 +68,11 @@ const Details = () => {
         <div className='min-h-screen'>
             <Container>
                 <Navbar/>
-                <div className='h-[400px] flex gap-2 '>
+                <div className='px-6 md:px-0 md:h-[400px] flex-col md:flex-row flex gap-2 '>
                     <div className='flex-1 w-full h-full'>
                     <img src={data?.image} alt="" className='h-full w-full object-cover rounded-md'/>
                     </div>
-                    <div className='h-full w-72 bg-[#142c3d] rounded-md p-4 flex flex-col justify-between'>
+                    <div className='h-full w-full md:w-72 bg-[#142c3d] rounded-md p-10 md:p-4 flex flex-col justify-between gap-6 md:gap-0'>
                         <h1 className='text-2xl font-bold text-white'>{data?.price_range}</h1>
                         <h1 className='text-xl text-white font-semibold'>{data?.title}</h1>
                         <p className='flex items-center text-gray-300'><MdOutlineLocationOn/>{data?.location}</p>

@@ -34,7 +34,7 @@ const MyWishlist = () => {
 
     console.log(wishlist);
     return (
-        <div className="space-y-6 py-8">
+        <div className=" px-6 space-y-6 py-8">
       <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
         My Wishlist
       </h1>

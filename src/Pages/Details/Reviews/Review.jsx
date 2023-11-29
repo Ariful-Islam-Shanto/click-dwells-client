@@ -69,11 +69,11 @@ const Review = ({ propertyInfo }) => {
   };
 
   return (
-    <div className="py-14 space-y-12">
+    <div className="px-6 md:px-0 pb-6 py-14 space-y-12">
       <h1 className="text-4xl text-center text-black font-bold">
         All the reviews made by our beloved.
       </h1>
-      <div className="flex h-[400px] gap-4">
+      <div className="flex flex-col md:flex-row md:h-[400px] gap-4">
         <div className="flex-1">
           <img
             src="https://i.ibb.co/0QXwkNM/5374793.jpg"

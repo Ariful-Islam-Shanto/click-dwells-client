@@ -68,15 +68,7 @@ const MakeAnOfferForm = () => {
     
         console.log(offeredInfo);
 
-    //     const { data } = await axiosSecure.post('/offeredProperty', offeredInfo);
-    //     if(data.insertedId) {
-    //         toast.success('Successfully offered.')
-    //         console.log(data);
-    //     }
-    // } catch (error) {
-    //     console.log(error);
-    //     toast.error(error.message);
-    // }
+   
 
     mutate(offeredInfo)
   };
@@ -97,9 +89,9 @@ const MakeAnOfferForm = () => {
 
 
   return (
-    <div className="bg-[#0b161e] p-4 mt-4 rounded-md">
-      <h1 className="text-4xl font-bold text-white text-center">
-        Add Property
+    <div className="px-6 md:bg-[#0b161e] p-4 mt-4 rounded-md">
+      <h1 className="text-4xl font-bold  md:text-white text-center">
+        Make an offer
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}

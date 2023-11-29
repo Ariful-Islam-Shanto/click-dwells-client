@@ -14,40 +14,6 @@ const Dashboard = () => {
   console.log(role);
   
   return (
-    // <div className=" min-h-screen flex">
-    //   <div className="hidden lg:block xl:block lg:w-64 xl:64 menu">
-    //     <ul className="menu text-center  p-4">
-    //      {/* User menu */}
-    //      {!isLoading && role === 'guest' && <UserMenu/>}
-    //         {/* Agent menu */}
-    //      {!isLoading && role === 'agent' && <AgentMenu/>}
-    //         {/* Admin menu */}
-    //      {!isLoading && role === 'admin' && <AdminMenu/>}
-    //     </ul>
-    //   </div>
-    //   {/* <div>
-    //    {
-    //     setIsOpen === 'true' ?
-    //   <IoMdCloseCircle onClick={setIsOpen(false)}/> :
-    //    <GiHamburgerMenu onClick={setIsOpen(true)}/>
-    //    }
-    //   </div> */}
-    //   <div className="hidden bg-black z-40 top-5 left-5 lg:hidden xl:hidden lg:w-64 xl:64 absolute">
-    //     <ul className="menu text-center  p-4">
-    //      {/* User menu */}
-    //      {!isLoading && role === 'guest' && <UserMenu/>}
-    //         {/* Agent menu */}
-    //      {!isLoading && role === 'agent' && <AgentMenu/>}
-    //         {/* Admin menu */}
-    //      {!isLoading && role === 'admin' && <AdminMenu/>}
-    //     </ul>
-    
-    //   </div>
-
-    //   <div className="flex-1">
-    //     <Outlet />
-    //   </div>
-    // </div>
 
 <div className="drawer">
   <input id="my-drawer" type="checkbox" className="drawer-toggle" />

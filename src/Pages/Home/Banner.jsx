@@ -13,10 +13,6 @@ const Banner = () => {
         <p className="text-xs text-center md:text-left lg:text-left xl:text-left md:text-sm font-thin text-gray-700">
           At ClickDwells, embark on a journey where every click is a step closer
          to unlocking the door to your dream home.
-           {/*  Our curated collection of
-          properties invites you to explore a world of possibilities, where each
-          dwelling has a unique story to tell. Find not just a house, but a
-          place where your aspirations come to life. */}
         </p>
         <button className="px-8 py-2 border-none bg-[#ff735c] rounded-md border-0 text-white">Get Started</button>
       </div>

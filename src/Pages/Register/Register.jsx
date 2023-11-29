@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../../Components/Container/Container";
 import { Link, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
@@ -6,17 +6,20 @@ import useAuth from "../../hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebase.config";
 import toast from "react-hot-toast";
+import { FidgetSpinner } from "react-loader-spinner";
 
 const Register = () => {
   const axiosPublic = useAxiosPublic();
   const { createUser } = useAuth();
   const navigate = useNavigate();
+  const [processing, setProcessing] = useState(false);
 
   const image_hosting_key = import.meta.env.VITE_IMAGE_BB_API_KEY;
   const imageBB_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setProcessing(true);
 
     const form = new FormData(e.target);
     const name = form.get("name");
@@ -26,6 +29,7 @@ const Register = () => {
     console.log(name, email, password, image);
 
     if (!name || !email || !password || !image) {
+      setProcessing(false)
       return toast.error("Please fill the form correctly.");
     }
 
@@ -57,6 +61,7 @@ const Register = () => {
 
         //? if user is successfully created then update the profile.
         if (user) {
+         
           await updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: hostedImg,
@@ -74,8 +79,10 @@ const Register = () => {
           if (data.modifiedCount > 0) {
             console.log(data);
           }
+          setProcessing(false)
           toast.success("Successfully Created Account.");
           navigate("/");
+
         }
       }
 
@@ -154,16 +161,29 @@ const Register = () => {
                     </a>
                   </label>
                 </div>
-                <div className="form-control mt-6">
-                  <button
+                <div onClick={() => setProcessing(true)} className="form-control mt-6">
+                <button
                     type="submit"
-                    className="btn bg-[#ffbb55] border-none text-gray-800"
+                    className="btn bg-[#d27a10] text-gray-800"
                   >
-                    Login
+                    {processing ? (
+                      <FidgetSpinner
+                        visible={true}
+                        height="20"
+                        width="20"
+                        ariaLabel="dna-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="dna-wrapper"
+                        ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+                        backgroundColor="#F4442E"
+                      />
+                    ) : (
+                      "Register"
+                    )}
                   </button>
                 </div>
               </form>
-              <p className="text-neutral-100 font-thin text-center">
+              <p className=" pb-4 font-thin text-center">
                 New to ClickDwells? Please{" "}
                 <Link to={"/login"}>
                   <span className="text-blue-400 hover:underline">

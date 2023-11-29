@@ -42,7 +42,7 @@ const AllProperties = () => {
 
 
   return (
-    <div className="">
+    <div className="px-6 md:px-0">
       <Container>
         <Navbar></Navbar>
         <h1 className="text-4xl mb-8 border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">

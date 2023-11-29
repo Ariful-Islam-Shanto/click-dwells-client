@@ -35,7 +35,7 @@ const MyReviews = () => {
   });
 
   return (
-    <div className="py-12 space-y-8">
+    <div className="px-6 py-12 space-y-8">
         <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
          My Reviews
         </h1>
