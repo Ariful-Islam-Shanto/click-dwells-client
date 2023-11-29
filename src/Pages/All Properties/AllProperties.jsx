@@ -8,11 +8,12 @@ import { Link } from "react-router-dom";
 const AllProperties = () => {
   const axiosSecure = useAxiosSecure();
   const [searchTitle, setSearchTitle] = useState('');
+  const [sortBy, setSortBy] = useState('');
 
   const { data: allProperties, isLoading, refetch } = useQuery({
-    queryKey: ["verifiedProperty"],
+    queryKey: ["verifiedProperty", sortBy],
     queryFn: async () => {
-      const { data } = await axiosSecure.get(`/properties?status=verified&&title=${searchTitle}`);
+      const { data } = await axiosSecure.get(`/properties?status=verified&&title=${searchTitle}&sortBy=${sortBy}`);
       return data;
     },
   });
@@ -31,6 +32,15 @@ const AllProperties = () => {
     refetch();
   }
 
+  //? Handle Sort
+    const handleSortChange = (event) => {
+        event.preventDefault();
+        setSortBy(event.target.value);
+        console.log(sortBy);
+    };
+ 
+
+
   return (
     <div className="">
       <Container>
@@ -38,6 +48,8 @@ const AllProperties = () => {
         <h1 className="text-4xl mb-8 border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
           Find your next place to live
         </h1>
+
+        <div className="flex w-full items-center justify-between">
         <div className="flex items-center ">
           <input
             type="text"
@@ -51,6 +63,18 @@ const AllProperties = () => {
         onClick={handleOnSubmit}
       >Search</button>
         </div>
+        <select
+          className="select select-bordered ml-2"
+          onChange={handleSortChange}
+          defaultValue={'default'}
+        >
+
+          <option value="default">Sort By Price</option>
+          <option value="asc">High to Low</option>
+          <option value="desc">Low to High</option>
+        </select>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 py-8">
           {allProperties?.map((property) => (
             <div
