@@ -18,8 +18,7 @@ const Home = () => {
   return (
     <div>
       <div
-        style={bg}
-        className={` h-full bg-cover bg-center bg-gradient-to-tr  from-[#1a1919] to-[#fff9ce63]`}
+        className={` h-full bg-cover bg-center bg-gradient-to-tr  from-[#dedada] to-[#fff9ce63]`}
       >
         <Container>
           <Navbar />

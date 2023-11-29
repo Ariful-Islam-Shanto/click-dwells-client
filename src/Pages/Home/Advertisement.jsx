@@ -82,7 +82,7 @@ const navigate = useNavigate();
                                     navigate(`/property/details/${property?._id}`)
                                 }
 
-                            }} className="px-6 py-2 text-white rounded-md border-none bg-[#FFAC12] w-full">Details</button>
+                            }} className="px-6 py-2 text-white rounded-md border-none bg-[#ff735c] w-full">Details</button>
                          
                       </div>
                     </div>

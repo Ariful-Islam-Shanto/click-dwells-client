@@ -1,17 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const MakeAnOfferForm = () => {
   const {user} = useAuth();
+
   const { data: wishlist = {} } = useLoaderData();
   const axiosSecure = useAxiosSecure();
 
-//   console.log(wishlist);
+
   const {
     register,
     handleSubmit,

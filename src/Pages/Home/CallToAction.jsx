@@ -18,7 +18,7 @@ const CallToAction = () => {
               <p className="mb-5">
               Start your journey towards homeownership today. Join our community of satisfied homeowners who found their ideal property with us. Click below to explore listings, connect with agents, and make your dream home a reality.
               </p>
-              <button className="btn btn-primary">Get Started</button>
+              <button className="px-8 py-3 rounded-md text-white border-none bg-[#ff735c]">Get Started</button>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import Container from '../../Components/Container/Container';
 import Navbar from '../../Components/Navbar/Navbar';
 import { MdOutlineLocationOn } from "react-icons/md";
@@ -12,8 +12,19 @@ import Review from './Reviews/Review';
 const Details = () => {
 
     const {data = {}} = useLoaderData();
+    // console.log(data);
+    // const { id } = useParams();
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
+
+    // const { data = {} , isLoading, refetch} = useQuery({
+    //     enabled : !!id,
+    //     queryKey : ['details'],
+    //     queryFn : async () => {
+    //         const { data } = await axiosSecure.get(`/property/${id}`);
+    //         return data;
+    //     }
+    // })
 
 
     const handleAddToWishList = async () => {
@@ -68,7 +79,7 @@ const Details = () => {
                 <Navbar/>
                 <div className='h-[400px] flex gap-2 '>
                     <div className='flex-1 w-full h-full'>
-                    <img src={data.image} alt="" className='h-full w-full object-cover rounded-md'/>
+                    <img src={data?.image} alt="" className='h-full w-full object-cover rounded-md'/>
                     </div>
                     <div className='h-full w-72 bg-[#142c3d] rounded-md p-4 flex flex-col justify-between'>
                         <h1 className='text-2xl font-bold text-white'>{data?.price_range}</h1>

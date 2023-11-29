@@ -22,7 +22,7 @@ const MySoldProperties = () => {
   return (
     <div className="space-y-4 py-8 px-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-4xl text-left text-black font-bold">
+        <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
           My Sold Properties
         </h1>
         {/* stat */}
