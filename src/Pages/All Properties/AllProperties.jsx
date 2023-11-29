@@ -4,6 +4,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Container from "../../Components/Container/Container";
 import Navbar from "../../Components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AllProperties = () => {
   const axiosSecure = useAxiosSecure();
@@ -43,6 +44,9 @@ const AllProperties = () => {
 
   return (
     <div className="px-6 md:px-0">
+         <Helmet>
+                <title>Click Dwells | All Properties</title>
+            </Helmet>
       <Container>
         <Navbar></Navbar>
         <h1 className="text-4xl mb-8 border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">

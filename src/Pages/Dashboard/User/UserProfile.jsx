@@ -1,6 +1,7 @@
 import React from "react";
 import useAuth from "../../../hooks/useAuth";
 import useRole from "../../../hooks/useRole";
+import { Helmet } from "react-helmet";
 
 const UserProfile = () => {
   const { user } = useAuth();
@@ -13,6 +14,9 @@ const UserProfile = () => {
   };
   return (
     <div className="md:bg-[#141627] min-h-screen space-y-6 flex items-center justify-center">
+      <Helmet>
+                <title>CD Dashboard | User Profile</title>
+            </Helmet>
         <div className="bg-[#F4F8EE] flex flex-col items-center p-6 rounded-lg gap-3">
             <div className="space-y-6 flex-1 items-center flex">
        <div className="space-y-4">

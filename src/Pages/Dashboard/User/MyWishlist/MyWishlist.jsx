@@ -4,6 +4,7 @@ import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const MyWishlist = () => {
     const {user, loading} = useAuth();
@@ -35,6 +36,9 @@ const MyWishlist = () => {
     console.log(wishlist);
     return (
         <div className=" px-6 space-y-6 py-8">
+          <Helmet>
+                <title>CD Dashboard | My Wishlist</title>
+            </Helmet>
       <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
         My Wishlist
       </h1>

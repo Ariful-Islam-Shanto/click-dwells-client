@@ -7,6 +7,7 @@ import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebase.config";
 import toast from "react-hot-toast";
 import { FidgetSpinner } from "react-loader-spinner";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const axiosPublic = useAxiosPublic();
@@ -96,6 +97,9 @@ const Register = () => {
 
   return (
     <div>
+        <Helmet>
+                <title>Click Dwells | Register</title>
+            </Helmet>
       <Container>
         <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">

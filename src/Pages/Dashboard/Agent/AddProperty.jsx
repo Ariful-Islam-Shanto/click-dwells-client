@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import useRole from '../../../hooks/useRole';
+import { Helmet } from 'react-helmet';
 
 const AddProperty = () => {
     const {user} = useAuth();
@@ -79,6 +80,9 @@ const AddProperty = () => {
     }
     return (
         <div className='bg-[#0b161e] p-4 mt-4 rounded-md'>
+            <Helmet>
+                <title>CD Dashboard | Add Property</title>
+            </Helmet>
             <h1 className='text-4xl font-bold text-white text-center'>Add Property</h1>
              <form onSubmit={handleSubmit} className="card-body grid grid-cols-1 md:grid-cols-4">
               <div className="form-control col-span-1 md:col-span-2">

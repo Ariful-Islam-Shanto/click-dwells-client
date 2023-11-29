@@ -27,6 +27,8 @@ import ManageReviews from '../Pages/Dashboard/Admin/ManageReviews';
 import AdvertiseProperty from '../Pages/Dashboard/Admin/AdvertiseProperty';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
+import AgentRoute from './AgentRoute/AgentRoute';
+import AdminRoute from './AdminRoute/AdminRoute';
 
 
 
@@ -68,76 +70,76 @@ const routes = createBrowserRouter([
             //? User only routes
             {
                 path : 'user-profile',
-                element : <UserProfile/>
+                element : <PrivateRoute><UserProfile/></PrivateRoute>
             },
             {
                 path : 'wishlist',
-                element : <MyWishlist/>
+                element : <PrivateRoute> <MyWishlist/></PrivateRoute>
             },
             {
                 path : 'property-bought',
-                element : <PropertyBought/>
+                element : <PrivateRoute><PropertyBought/></PrivateRoute>
             },
             {
                 path : "make-an-offer/:id",
-                element : <MakeAnOfferForm/>,
+                element : <PrivateRoute><MakeAnOfferForm/></PrivateRoute>,
                 loader : async ({params}) => await axiosSecure.get(`/wishlist/${params.id}`)
             },
             {
                 path : "payment/:id",
-                element : <PaymentForm/>,
+                element : <PrivateRoute><PaymentForm/></PrivateRoute>,
                 loader : async ({params}) => await axiosSecure.get(`/propertyBought/${params.id}`)
             },
             {
                 path : "my-reviews",
-                element : <MyReviews/>
+                element : <PrivateRoute><MyReviews/></PrivateRoute>
             },
             //? Agent only routes
             {
                 path : 'agent-profile',
-                element : <AgentProfile/>
+                element : <AgentRoute><AgentProfile/></AgentRoute>
             },
             {
                 path : 'add-property',
-                element : <AddProperty/>
+                element : <AgentRoute><AddProperty/></AgentRoute>
             },
             {
                 path : 'my-added-properties',
-                element : <MyAddedProperties/>
+                element : <AgentRoute><MyAddedProperties/></AgentRoute>
             },
             {
                 path : 'offered-properties',
-                element : <OfferedProperty/>
+                element : <AgentRoute><OfferedProperty/></AgentRoute>
             },
             {
                 path : "sold-properties",
-                element : <MySoldProperties/>
+                element : <AgentRoute><MySoldProperties/></AgentRoute>
             },
             {
                 path : "update/:id",
-                element : <UpdateProperty/>,
+                element : <AgentRoute><UpdateProperty/></AgentRoute>,
                 loader : async ({params}) => await axiosSecure.get(`/property/${params.id}`)
             },
             //? Admin only routes
             {
                 path : 'admin-profile',
-                element : <AdminProfile/>
+                element :  <AdminRoute><AdminProfile/></AdminRoute>
             },
             {
                 path : 'manage-properties',
-                element : <ManageProperties/>
+                element : <AdminRoute><ManageProperties/></AdminRoute>
             },
             {
                 path : 'manage-users',
-                element : <ManageUsers/>
+                element : <AdminRoute><ManageUsers/></AdminRoute>
             },
             {
                 path : 'manage-reviews',
-                element : <ManageReviews/>
+                element : <AdminRoute><ManageReviews/></AdminRoute>
             },
             {
                 path : 'advertise-property',
-                element : <AdvertiseProperty/>
+                element : <AdminRoute><AdvertiseProperty/></AdminRoute>
             }
         ]
     }

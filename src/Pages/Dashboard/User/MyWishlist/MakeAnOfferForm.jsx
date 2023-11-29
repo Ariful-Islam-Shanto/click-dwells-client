@@ -5,6 +5,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 const MakeAnOfferForm = () => {
   const {user} = useAuth();
@@ -90,6 +91,10 @@ const MakeAnOfferForm = () => {
 
   return (
     <div className="px-6 md:bg-[#0b161e] p-4 mt-4 rounded-md">
+        <Helmet
+        >
+                <title>CD Dashboard | Make An Offer</title>
+            </Helmet>
       <h1 className="text-4xl font-bold  md:text-white text-center">
         Make an offer
       </h1>

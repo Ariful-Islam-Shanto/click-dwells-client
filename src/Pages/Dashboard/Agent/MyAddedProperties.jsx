@@ -4,6 +4,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const MyAddedProperties = () => {
   const { user, loading } = useAuth();
@@ -37,7 +38,9 @@ const MyAddedProperties = () => {
   console.log(properties);
   return (
     <div className="px-6 space-y-6 py-8">
-    
+    <Helmet>
+                <title>CD Dashboard | Added Properties</title>
+            </Helmet>
       <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
          My Added Properties
         </h1>

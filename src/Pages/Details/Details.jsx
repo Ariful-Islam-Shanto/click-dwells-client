@@ -8,6 +8,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
 import Review from './Reviews/Review';
+import { Helmet } from 'react-helmet';
 
 const Details = () => {
 
@@ -66,6 +67,9 @@ const Details = () => {
    
     return (
         <div className='min-h-screen'>
+            <Helmet>
+                <title>Click Dwells | Details</title>
+            </Helmet>
             <Container>
                 <Navbar/>
                 <div className='px-6 md:px-0 md:h-[400px] flex-col md:flex-row flex gap-2 '>

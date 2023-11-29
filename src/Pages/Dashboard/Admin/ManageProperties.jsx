@@ -3,6 +3,7 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const ManageProperties = () => {
 
@@ -39,6 +40,9 @@ const ManageProperties = () => {
       }
     return (
         <div className="space-y-4 py-8 ">
+            <Helmet>
+                <title>CD Dashboard | Manage Properties</title>
+            </Helmet>
       <h1 className="text-4xl text-center text-black font-bold">
         Manage Properties
       </h1>

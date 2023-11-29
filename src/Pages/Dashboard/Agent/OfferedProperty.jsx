@@ -3,6 +3,7 @@ import useAuth from "../../../hooks/useAuth";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const OfferedProperty = () => {
   const { user, loading } = useAuth();
@@ -38,6 +39,9 @@ const OfferedProperty = () => {
   console.log(offeredProperty);
   return (
     <div className="px-6 space-y-4 py-8 ">
+        <Helmet>
+                <title>CD Dashboard | Offered Properties</title>
+            </Helmet>
       <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
          Offered Properties
         </h1>

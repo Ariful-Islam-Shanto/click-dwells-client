@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { FidgetSpinner } from "react-loader-spinner";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { userLogIn, googleLogin } = useAuth();
@@ -69,6 +70,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+                <title>Click Dwells | Login</title>
+            </Helmet>
       <Container>
         <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">

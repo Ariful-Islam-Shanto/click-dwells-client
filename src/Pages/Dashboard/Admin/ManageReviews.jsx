@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 const ManageReviews = () => {
   const { user, loading } = useAuth();
@@ -37,6 +38,9 @@ const ManageReviews = () => {
 
   return (
     <div className="px-6 py-12 space-y-8">
+        <Helmet>
+                <title>CD Dashboard | Manage Reviews</title>
+            </Helmet>
         <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
          Manage Reviews
         </h1>

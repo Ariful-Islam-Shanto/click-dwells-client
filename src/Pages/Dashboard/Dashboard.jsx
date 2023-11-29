@@ -6,6 +6,7 @@ import AgentMenu from "./Menu/AgentMenu/AgentMenu";
 import AdminMenu from "./Menu/AdminMenu/AdminMenu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdCloseCircle } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
 
@@ -16,6 +17,9 @@ const Dashboard = () => {
   return (
 
 <div className="drawer">
+<Helmet>
+                <title>Click Dwells | Dashboard</title>
+            </Helmet>
   <input id="my-drawer" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content">
   <div className=" min-h-screen flex">

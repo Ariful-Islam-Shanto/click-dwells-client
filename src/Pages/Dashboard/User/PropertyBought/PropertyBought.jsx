@@ -3,6 +3,7 @@ import useAuth from '../../../../hooks/useAuth';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const PropertyBought = () => {
 
@@ -22,6 +23,9 @@ const PropertyBought = () => {
       console.log(propertyBought);
     return (
         <div className="px-6 space-y-6 py-8">
+            <Helmet>
+                <title>CD Dashboard | Property Bought</title>
+            </Helmet>
         <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
          Property Bought
         </h1>

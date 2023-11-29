@@ -2,6 +2,7 @@ import React from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 const MySoldProperties = () => {
   const { user, loading } = useAuth();
@@ -21,6 +22,9 @@ const MySoldProperties = () => {
   console.log(soldProperties);
   return (
     <div className="space-y-4 py-8 px-6">
+        <Helmet>
+                <title>CD Dashboard | Sold Properties</title>
+            </Helmet>
       <div className="flex items-center justify-between">
         <h1 className="text-4xl border-l-4 pl-4 border-[#c28223] text-left text-black font-bold">
           My Sold Properties

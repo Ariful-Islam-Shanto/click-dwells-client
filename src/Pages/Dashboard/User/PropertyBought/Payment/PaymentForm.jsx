@@ -3,6 +3,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CheckoutForm from './CheckoutForm';
+import { Helmet } from 'react-helmet';
 
 const PaymentForm = () => {
     const {data : propertyBought = {}} = useLoaderData();
@@ -34,7 +35,9 @@ const PaymentForm = () => {
 
     return (
         <div>
-           
+           <Helmet>
+                <title>CD Dashboard | Payment Form</title>
+            </Helmet>
               <Elements stripe={stripePromise}>
                     <CheckoutForm propertyInfo={propertyInfo} />
                 </Elements>

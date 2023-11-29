@@ -3,6 +3,7 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const ManageUsers = () => {
 
@@ -56,6 +57,9 @@ const ManageUsers = () => {
 
     return (
         <div className="space-y-4 py-8 ">
+            <Helmet>
+                <title>CD Dashboard | Manage Users</title>
+            </Helmet>
       <h1 className="text-4xl text-center text-white font-bold">
         Manage Users
       </h1>
