@@ -29,11 +29,15 @@ Welcome to Click Dwells, a comprehensive solution for buying, selling, and manag
     - Admins manage user accounts, promoting users to agents or taking actions against fraudulent activities.
 
 
-# React + Vite
+## Technologies Used
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Frontend:** **React.js** with **Vite** for a fast and efficient development experience.
+- **State Management:** **React Query** for managing state and fetching data.
+- **UI Components:** **DaisyUI** for building UI components in Tailwind CSS.
+- **Styling:** **Tailwind CSS** for a utility-first and responsive design approach.
+- **Animation:** **Lottie React** for adding animated elements to the UI.
+- **Payment Integration:** **Stripe** for secure online transactions.
+- **Database:** **Firebase** for storing and managing real estate property information.
+- **Routing:** **React Router DOM** for handling navigation within the application.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

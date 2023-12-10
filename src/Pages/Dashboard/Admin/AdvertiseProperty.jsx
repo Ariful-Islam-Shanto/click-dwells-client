@@ -50,7 +50,7 @@ const AdvertiseProperty = () => {
             <thead>
               <tr>
                 <th>Property</th>
-                <th>Buyer</th>
+                <th>Agent</th>
                 <th>Price Range</th>
                 <th>Action</th>
               </tr>
